@@ -8,27 +8,31 @@ It's like `nvm` but for nix!
 
 ### Setting up the registry
 
-Via the CLI **TODO**
+Via the CLI
 
 ```sh
 nix registry add node 'github:andyrichardson/nix-node'
 ```
 
-In configuration.nix **TODO**
+In `configuration.nix`
 
 ```nix
-nix.registry."node".flake = 'github:andyrichardson/nix-node';
+nix.registry."node".to = {
+  type = "github";
+  owner = "andyrichardson";
+  repo = "nix-node";
+};
 ```
 
 ### Setting up the binary cache
 
-Via the CLI **TODO**
+Via the CLI
 
 ```sh
 cachix use nix-node
 ```
 
-In configuration.nix **TODO**
+In `configuration.nix`
 
 ```nix
 nix.binaryCaches = [ "https://cache.nixos.org/" "https://nix-node.cachix.org/" ]
@@ -36,16 +40,16 @@ nix.binaryCaches = [ "https://cache.nixos.org/" "https://nix-node.cachix.org/" ]
 
 ## Usage
 
-Using latest major releases **TODO**
+Using latest major releases
 
 ```sh
-nix shell nodejs#16
+nix shell node#16
 ```
 
-Using explicit release versions **TODO**
+Using explicit release versions
 
 ```sh
-nix shell nodejs#16.3.0
+nix shell node#16.3.0
 ```
 
 ## Contributing
