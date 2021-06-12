@@ -1,0 +1,34 @@
+on:
+  - push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: nixpkgs/nix-flakes
+    strategy:
+      matrix:
+        version:
+          - 16
+          - 16.3.0
+          - 16.2.0
+          - 15
+          - 15.9.0
+          - 15.7.0
+    steps:
+      - name: Setup nix features
+        run: echo "experimental-features = nix-command flakes ca-references" > /etc/nix/nix.conf
+      - name: Install CI dependencies
+        run: nix profile install nixpkgs#git nixpkgs#bash nixpkgs#cachix
+      - name: Setup env
+        run: |
+          source $ENV
+          echo "PATH=$PATH" >> $GITHUB_ENV 
+      - uses: actions/checkout@v1
+      - name: Add cachix "nix-node" entry
+        run: cachix use nix-node
+      - name: build ${{ matrix.version }}
+        run: nix build .#${{ matrix.version }}
+      - name: publish ${{ matrix.version }}
+        run: cachix push nix-node `cd -P result && pwd`
+        env:
+          CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
