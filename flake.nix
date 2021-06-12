@@ -21,6 +21,18 @@
           sha256 = "0Pk7mEKvuPI8B4YunNSCJucQRUf3skFdJQ/bdS0bNc8=";
           patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
         });
+        v16_1_0 = (buildNodejs {
+          enableNpm = true;
+          version = "16.1.0";
+          sha256 = "0z0808mw674mshgbmhgngqfkrdix3b61f77xcdz7bwf1j87j7ad0";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v16_0_0 = (buildNodejs {
+          enableNpm = true;
+          version = "16.0.0";
+          sha256 = "00mada0vvybizygwhzsq6gcz0m2k864lfiiqqlnw8gcc3q8r1js7";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
         v15_9_0 = (buildNodejs {
           enableNpm = true;
           version = "15.9.0";
@@ -38,6 +50,8 @@
             passthru = {
                 "3"."0" = v16_3_0;
                 "2"."0" = v16_2_0;
+                "1"."0" = v16_1_0;
+                "0"."0" = v16_0_0;
             };
         });
         "15" = v15_9_0.overrideAttrs (prev: {
