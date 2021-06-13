@@ -42,7 +42,7 @@ const semverSort = (a, b) => {
 const results = await Promise.all(
   versions
     // Optional major version filter
-    // .filter((v) => v.indexOf("15") == 0)
+    .filter((v) => v.indexOf("14") == 0)
     .sort(semverSort)
     .map(async (version) => ({
       version,
@@ -52,6 +52,7 @@ const results = await Promise.all(
 
 results.reverse();
 
+// Print derivation
 results.forEach(({ version, checksum }) => {
   console.log(`
     v${version.replaceAll(".", "_")} = (buildNodejs {
@@ -62,3 +63,12 @@ results.forEach(({ version, checksum }) => {
     });
   `);
 });
+
+// Print derivation entrypoint
+results.forEach(({ version }) => {
+  const [major, minor, patch] = version.split('.');
+  console.log(`"${minor}"."${patch}" = v${major}_${minor}_${patch};`)
+})
+
+// Print versions for CI usage
+results.forEach(({ version }) => console.log(`- ${version}`));

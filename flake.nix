@@ -141,6 +141,162 @@
           sha256 = "0yrlzxrqb5j0qyj4qgzfxyvvd7c76hpslkiswj3cjcq70qbql4zn";
           patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
         });
+        v14_17_0 = (buildNodejs {
+          enableNpm = true;
+          version = "14.17.0";
+          sha256 = "1vf989canwcx0wdpngvkbz2x232yccp7fzs1vcbr60rijgzmpq2n";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_16_1 = (buildNodejs {
+          enableNpm = true;
+          version = "14.16.1";
+          sha256 = "1hxsk83g2plv6vv3ir1ngca0rwqdy3lq70r504d2qv3msszdnjp4";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_16_0 = (buildNodejs {
+          enableNpm = true;
+          version = "14.16.0";
+          sha256 = "19nz2mhmn6ikahxqyna1dn25pb5v3z9vsz9zb2flb6zp2yk4hxjf";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_15_5 = (buildNodejs {
+          enableNpm = true;
+          version = "14.15.5";
+          sha256 = "0nv576mlmnf8pfs6yn7vsvwyg0a0xvs7m9pm4k131zjqx501v6z1";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_15_4 = (buildNodejs {
+          enableNpm = true;
+          version = "14.15.4";
+          sha256 = "177cxp4fhmglyx035j8smiy1bp5fz6q2phlcl0a2mdbldkvfrdxd";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_15_3 = (buildNodejs {
+          enableNpm = true;
+          version = "14.15.3";
+          sha256 = "1zplrfhsrqblvq2wxf5386wc9hf11k42jaw4mzgwy5dxx6dv3krj";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_15_2 = (buildNodejs {
+          enableNpm = true;
+          version = "14.15.2";
+          sha256 = "1076v19sxsfbccwdqg559bs86vr875axi5nhnskz57lngwkdyag0";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_15_1 = (buildNodejs {
+          enableNpm = true;
+          version = "14.15.1";
+          sha256 = "1g61vqsgq3jsipw2fckj68i4a4pi1iz1kbw7mlw8jmzp8rl46q81";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_15_0 = (buildNodejs {
+          enableNpm = true;
+          version = "14.15.0";
+          sha256 = "0fzv05f8rnc0s1a11k0cqfpgv9yawfbdd8qcl8zr25kv5ridhdip";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_14_0 = (buildNodejs {
+          enableNpm = true;
+          version = "14.14.0";
+          sha256 = "1rphkl3lqg0rzgg0r58bfv1hjw3rg96qvqcilk2927kbpps3bs84";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_13_1 = (buildNodejs {
+          enableNpm = true;
+          version = "14.13.1";
+          sha256 = "1xhmdhzsk3pfl4k8l0ipd9a1v5z807sl65mwkw51y7lc44gbsqb0";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_13_0 = (buildNodejs {
+          enableNpm = true;
+          version = "14.13.0";
+          sha256 = "1r06xnf4i5bkq8pgc9y25yhkm787xi3igay883w0a45l83abxfg0";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_12_0 = (buildNodejs {
+          enableNpm = true;
+          version = "14.12.0";
+          sha256 = "0c2mv208akyk10pmjfilxbdpi2gpb5zlb4h903lgqmr229kmnd3c";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_11_0 = (buildNodejs {
+          enableNpm = true;
+          version = "14.11.0";
+          sha256 = "1sq5j9fpcj0sb9062fik35chkc3lgdbwj56fcza186qsfzrf9iji";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_10_1 = (buildNodejs {
+          enableNpm = true;
+          version = "14.10.1";
+          sha256 = "1dymx9j3g6wbbdmw6083yg49ydxwfl2fgy9i8jxpngnskvwq4lrb";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_10_0 = (buildNodejs {
+          enableNpm = true;
+          version = "14.10.0";
+          sha256 = "00f7p2l3wpj12r6bxz7l6cxkipwl6in4qlzxrzkk0z81k32ph6s3";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_9_0 = (buildNodejs {
+          enableNpm = true;
+          version = "14.9.0";
+          sha256 = "1xkfivr0qci50ksg66szyasdlbiwh2j7ia4n6qc5csih2nvzcbh1";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_8_0 = (buildNodejs {
+          enableNpm = true;
+          version = "14.8.0";
+          sha256 = "0vghz7g7mih7idgknwzdc2zfw82qqq497m727ydhkas1wvj6i7lv";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_7_0 = (buildNodejs {
+          enableNpm = true;
+          version = "14.7.0";
+          sha256 = "0vwf523ahw0145wp17zkaflwm5823v1vz1kkglj25gzjydiiqbya";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_6_0 = (buildNodejs {
+          enableNpm = true;
+          version = "14.6.0";
+          sha256 = "153a07ffrmvwbsc78wrc0xnwymmzrhva0kn6mgnfi3086v3h1wss";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_5_0 = (buildNodejs {
+          enableNpm = true;
+          version = "14.5.0";
+          sha256 = "1d6w7ycdiqbkip7m6m8xly31qgx7ywakzvrnqdq8ini5sricjlgb";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_4_0 = (buildNodejs {
+          enableNpm = true;
+          version = "14.4.0";
+          sha256 = "1fbx1r3fflpsy0s7zknca0xyv2gg0ff5fl8czzsb79imqjlgcy0x";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_3_0 = (buildNodejs {
+          enableNpm = true;
+          version = "14.3.0";
+          sha256 = "0xqs9z0pxx8m5dk9gm1r9pxfk9vdmpvfsj94mfdkqar578nfm8gi";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_2_0 = (buildNodejs {
+          enableNpm = true;
+          version = "14.2.0";
+          sha256 = "1kqnkqkv2chw9s0hazbaba5y1555h526825xqk4rr441wcxcrzcf";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_1_0 = (buildNodejs {
+          enableNpm = true;
+          version = "14.1.0";
+          sha256 = "0pw39628y8qi2jagmmnfj0fkcbv00qcd1cqybiprf1v22hhij44n";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
+        v14_0_0 = (buildNodejs {
+          enableNpm = true;
+          version = "14.0.0";
+          sha256 = "0r67a3srrrf62109byv1pnpmp4dxagrmkbv3rsaic46ky4lh28kf";
+          patches = lib.optional stdenv.isDarwin ./bypass-xcodebuild.diff;
+        });
       in rec {
         "16" = v16_3_0.overrideAttrs (prev: {
             passthru = {
@@ -171,6 +327,36 @@
                 "0"."1" = v15_0_1;
                 "0"."0" = v15_0_0;
             };
+        });
+        "14" = v14_17_0.overrideAttrs (prev: {
+          passthru = {
+            "17"."0" = v14_17_0;
+            "16"."1" = v14_16_1;
+            "16"."0" = v14_16_0;
+            "15"."5" = v14_15_5;
+            "15"."4" = v14_15_4;
+            "15"."3" = v14_15_3;
+            "15"."2" = v14_15_2;
+            "15"."1" = v14_15_1;
+            "15"."0" = v14_15_0;
+            "14"."0" = v14_14_0;
+            "13"."1" = v14_13_1;
+            "13"."0" = v14_13_0;
+            "12"."0" = v14_12_0;
+            "11"."0" = v14_11_0;
+            "10"."1" = v14_10_1;
+            "10"."0" = v14_10_0;
+            "9"."0" = v14_9_0;
+            "8"."0" = v14_8_0;
+            "7"."0" = v14_7_0;
+            "6"."0" = v14_6_0;
+            "5"."0" = v14_5_0;
+            "4"."0" = v14_4_0;
+            "3"."0" = v14_3_0;
+            "2"."0" = v14_2_0;
+            "1"."0" = v14_1_0;
+            "0"."0" = v14_0_0;
+          };
         });
       };
   };
