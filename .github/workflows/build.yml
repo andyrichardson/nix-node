@@ -179,6 +179,6 @@ jobs:
       - name: build
         run: nix build .#${{ matrix.version }}
       - name: publish binary
-        run: cachix push nix-node `cd -P result && pwd`
+        run: nix shell nixpkgs#cachix -c cachix push nix-node `cd -P result && pwd`
         env:
           CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
