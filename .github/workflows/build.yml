@@ -174,7 +174,6 @@ jobs:
           name: nix-node
           authToken:  ${{ secrets.CACHIX_AUTH_TOKEN }}
           extraPullNames: nix-node
-      - run: nix profile install nixpkgs#cachix
       - uses: actions/checkout@v1
       - name: build
         run: nix build .#${{ matrix.version }}
