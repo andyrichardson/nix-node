@@ -23,6 +23,8 @@ jobs:
         type: string
     steps:
       - setup-nix
+      - restore_cache:
+          key: linux-<< parameters.version >>-{{ .Revision }}-v1
       - run: cachix push nix-node `cd -P result && pwd`
 
 commands:
@@ -92,6 +94,7 @@ workflows:
                 - "14.1.0"
 
       - publish linux:
+          name: publish linux binaries (v<<matrix.version>>)
           matrix:
             parameters:
               version: *versions
