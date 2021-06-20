@@ -8,23 +8,36 @@ jobs:
         type: string
     steps:
       - checkout
-      - run: echo "experimental-features = nix-command flakes ca-references" > /etc/nix/nix.conf
-      - run: nix profile install nixpkgs#cachix
-      - run: cachix use nix-node
+      - setup nix
       - run: nix build .#<< parameters.version >>
       - save_cache:
           key: linux-<< parameters.version >>-{{ .Revision }}-v1
           paths:
-            - 'fielder.tgz'
+            - result
+
+  publish linux:
+    docker:
+      - image: nixpkgs/nix-flakes
+    steps:
+      - setup nix
       - run: cachix push nix-node `cd -P result && pwd`
+
+commands:
+  setup nix:
+    steps:
+      - run: echo "experimental-features = nix-command flakes ca-references" > /etc/nix/nix.conf
+      - run: nix profile install nixpkgs#cachix
+      - run: cachix use nix-node
+
 workflows:
   version: 2
   build and publish binaries:
     jobs:
       - build linux:
+          name: build linux (v<<matrix.version>>)
           matrix:
             parameters:
-              version:
+              version: *versions
                 - "16"
                 - "16.3.0"
                 - "16.2.0"
@@ -74,3 +87,10 @@ workflows:
                 - "14.3.0"
                 - "14.2.0"
                 - "14.1.0"
+
+      - publish linux:
+          matrix:
+            parameters:
+              version: &versions
+          requires:
+            - build linux (v<<matrix.version>>)
