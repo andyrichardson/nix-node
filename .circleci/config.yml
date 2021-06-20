@@ -1,0 +1,20 @@
+version: 2.1
+jobs:
+  build linux:
+    docker:
+      image: nixpkgs/nix-flakes
+    parameters:
+      version:
+        type: string
+    steps:
+      - checkout
+      - run: nix profile install nixpkgs#cachix
+      - run: cachix use nix-node
+      - run: nix build .#<< parameters.version >>
+      - run: cachix push nix-node `cd -P result && pwd`
+workflows:
+  version: 2
+  build and publish binaries:
+    jobs:
+      - build linux:
+          version: 16
