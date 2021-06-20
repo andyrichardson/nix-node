@@ -18,6 +18,9 @@ jobs:
   publish linux:
     docker:
       - image: nixpkgs/nix-flakes
+    parameters:
+      version:
+        type: string
     steps:
       - setup-nix
       - run: cachix push nix-node `cd -P result && pwd`
