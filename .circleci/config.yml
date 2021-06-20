@@ -13,7 +13,7 @@ jobs:
       - run: cachix use nix-node
       - run: nix build .#<< parameters.version >>
       - save_cache:
-          key: 
+          key: linux-<< parameters.version >>-{{ .Revision }}-v1
           paths:
             - 'fielder.tgz'
       - run: cachix push nix-node `cd -P result && pwd`
