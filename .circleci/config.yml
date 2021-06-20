@@ -30,6 +30,9 @@ jobs:
   build macos:
     macos:
       xcode: 11.3.0
+    parameters:
+      version:
+        type: string
     steps:
       - checkout
       - run: |
