@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build linux:
     docker:
-      image: nixpkgs/nix-flakes
+      - image: nixpkgs/nix-flakes
     parameters:
       version:
         type: string
