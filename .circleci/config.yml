@@ -8,6 +8,7 @@ jobs:
         type: string
     steps:
       - checkout
+      - run: echo "experimental-features = nix-command flakes ca-references" > /etc/nix/nix.conf
       - run: nix profile install nixpkgs#cachix
       - run: cachix use nix-node
       - run: nix build .#<< parameters.version >>
