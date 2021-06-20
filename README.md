@@ -4,6 +4,8 @@ All releases of nodejs built and accessible under a single flake.
 
 It's like `nvm` but for nix! 
 
+> Note: macOS binaries are WIP
+
 ## Setup
 
 ### Setting up the registry
