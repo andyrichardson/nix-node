@@ -15,7 +15,7 @@
             };
           build_v13 =
             callPackage "${nixpkgs}/pkgs/development/web/nodejs/nodejs.nix" {
-              icu = icu67;
+              icu = icu66;
               python = python2;
             };
           v16_3_0 = (build {
