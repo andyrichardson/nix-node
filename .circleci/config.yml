@@ -8,7 +8,7 @@ jobs:
         type: string
     steps:
       - checkout
-      - setup nix
+      - setup-nix
       - run: nix build .#<< parameters.version >>
       - save_cache:
           key: linux-<< parameters.version >>-{{ .Revision }}-v1
@@ -19,11 +19,11 @@ jobs:
     docker:
       - image: nixpkgs/nix-flakes
     steps:
-      - setup nix
+      - setup-nix
       - run: cachix push nix-node `cd -P result && pwd`
 
 commands:
-  setup nix:
+  setup-nix:
     steps:
       - run: echo "experimental-features = nix-command flakes ca-references" > /etc/nix/nix.conf
       - run: nix profile install nixpkgs#cachix
