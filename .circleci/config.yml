@@ -17,4 +17,4 @@ workflows:
   build and publish binaries:
     jobs:
       - build linux:
-          version: 16
+          version: "16"
