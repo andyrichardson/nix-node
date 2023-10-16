@@ -145,6 +145,126 @@
             sha256 = "0yrlzxrqb5j0qyj4qgzfxyvvd7c76hpslkiswj3cjcq70qbql4zn";
             patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
           });
+          v14_21_3 = (buildNodejs {
+            enableNpm = true;
+            version = "14.21.3";
+            sha256 = "0ph7ajgajn4fkadzklxkgd6dl5aw8cyvd707rzfh1mqaws9c13j5";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v14_21_2 = (buildNodejs {
+            enableNpm = true;
+            version = "14.21.2";
+            sha256 = "00zzl43iis8mr8x48hww5ncj8mj5dmpn05rq7ihpffkp2q7rmw6q";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v14_21_1 = (buildNodejs {
+            enableNpm = true;
+            version = "14.21.1";
+            sha256 = "1b573lmy9ik5vfhrin06595p301dkmx1lc5nj3q7p598lxn5vf9x";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v14_21_0 = (buildNodejs {
+            enableNpm = true;
+            version = "14.21.0";
+            sha256 = "14briz158vsgm94ywxpf2v3j8lk3pfvwmnz3wap4pifcpb0xljrv";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v14_20_1 = (buildNodejs {
+            enableNpm = true;
+            version = "14.20.1";
+            sha256 = "0kgirz73712z6n9ascfl4a6zzpg9mk8aimxxf7xcn8qrcvm5fl1n";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v14_20_0 = (buildNodejs {
+            enableNpm = true;
+            version = "14.20.0";
+            sha256 = "0slrcgiwwn8isp2ih5i2v1d6lsafz7bg6qwxf2lydlc9i14rhl1b";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v14_19_3 = (buildNodejs {
+            enableNpm = true;
+            version = "14.19.3";
+            sha256 = "15691j5zhiikyamiwwd7f282g6d9acfhq91nrwx54xya38gmpx2w";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v14_19_2 = (buildNodejs {
+            enableNpm = true;
+            version = "14.19.2";
+            sha256 = "1w4cd38idclw88j7ib5vcihh8yknacxhmcnp4cl9zxig2nlpahzg";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v14_19_1 = (buildNodejs {
+            enableNpm = true;
+            version = "14.19.1";
+            sha256 = "1ncxpal08rza4ydbwhsmn6v85padll7mrfw38kq9mcqshvfhkbp1";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v14_19_0 = (buildNodejs {
+            enableNpm = true;
+            version = "14.19.0";
+            sha256 = "03038mzn6iqa8bhkkjzgzjr1jk146ayxba3ysd3pa4g601iq8bp9";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v14_18_3 = (buildNodejs {
+            enableNpm = true;
+            version = "14.18.3";
+            sha256 = "026nd6vihjdqz4jn0slg89m8m5vvkvjzgg1aip3dcg9lrm1w8fkq";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v14_18_2 = (buildNodejs {
+            enableNpm = true;
+            version = "14.18.2";
+            sha256 = "02v8rjwm8492w91rfvxy369bm11wy3vlkl3dxcl3dkcb1zhrr2iy";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v14_18_1 = (buildNodejs {
+            enableNpm = true;
+            version = "14.18.1";
+            sha256 = "1vc9rypkgr5i5y946jnyr9jjpydxvm74p1s17rg2zayzvlddg89z";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v14_18_0 = (buildNodejs {
+            enableNpm = true;
+            version = "14.18.0";
+            sha256 = "0naqv0aglsqy51pyiz42xz7wx5pfsbyscpdl8rir6kmfl1c52j3b";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v14_17_6 = (buildNodejs {
+            enableNpm = true;
+            version = "14.17.6";
+            sha256 = "0pmd0haav2ychhcsw44klx6wfn8c7j1rsw08rc8hcm5i3h5wsn7l";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v14_17_5 = (buildNodejs {
+            enableNpm = true;
+            version = "14.17.5";
+            sha256 = "1a0zj505nhpfcj19qvjy2hvc5a7gadykv51y0rc6032qhzzsgca2";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v14_17_4 = (buildNodejs {
+            enableNpm = true;
+            version = "14.17.4";
+            sha256 = "0b6gadc53r07gx6qr6281ifr5m9bgprmfdqyz9zh5j7qhkkz8yxf";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v14_17_3 = (buildNodejs {
+            enableNpm = true;
+            version = "14.17.3";
+            sha256 = "0j3zd5vavsapqs9h682mr8r5i7xp47n0w4vjvm8rw3rn3dg4p2sb";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v14_17_2 = (buildNodejs {
+            enableNpm = true;
+            version = "14.17.2";
+            sha256 = "0gjq61l1lm15bv47w0phil44nbh0fsq3mmqf40xxlm92gswb4psg";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v14_17_1 = (buildNodejs {
+            enableNpm = true;
+            version = "14.17.1";
+            sha256 = "0zr4b9gja8f9611rnmc9yacmh90bd76xv9ayikcyqdfzdpax5wfx";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
           v14_17_0 = (buildNodejs {
             enableNpm = true;
             version = "14.17.0";
@@ -295,6 +415,12 @@
             sha256 = "0pw39628y8qi2jagmmnfj0fkcbv00qcd1cqybiprf1v22hhij44n";
             patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
           });
+          v14_0_0 = (buildNodejs {
+            enableNpm = true;
+            version = "14.0.0";
+            sha256 = "0r67a3srrrf62109byv1pnpmp4dxagrmkbv3rsaic46ky4lh28kf";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
           v13_14_0 = (buildNodejs {
             enableNpm = true;
             version = "13.14.0";
@@ -428,8 +554,28 @@
               "0"."0" = v15_0_0;
             };
           });
-          "14" = v14_17_0.overrideAttrs (prev: {
+          "14" = v14_21_3.overrideAttrs (prev: {
             passthru = {
+              "21"."3" = v14_21_3;
+              "21"."2" = v14_21_2;
+              "21"."1" = v14_21_1;
+              "21"."0" = v14_21_0;
+              "20"."1" = v14_20_1;
+              "20"."0" = v14_20_0;
+              "19"."3" = v14_19_3;
+              "19"."2" = v14_19_2;
+              "19"."1" = v14_19_1;
+              "19"."0" = v14_19_0;
+              "18"."3" = v14_18_3;
+              "18"."2" = v14_18_2;
+              "18"."1" = v14_18_1;
+              "18"."0" = v14_18_0;
+              "17"."6" = v14_17_6;
+              "17"."5" = v14_17_5;
+              "17"."4" = v14_17_4;
+              "17"."3" = v14_17_3;
+              "17"."2" = v14_17_2;
+              "17"."1" = v14_17_1;
               "17"."0" = v14_17_0;
               "16"."1" = v14_16_1;
               "16"."0" = v14_16_0;
@@ -455,6 +601,7 @@
               "3"."0" = v14_3_0;
               "2"."0" = v14_2_0;
               "1"."0" = v14_1_0;
+              "0"."0" = v14_0_0;
             };
           });
           "13" = v13_14_0.overrideAttrs (prev: {
