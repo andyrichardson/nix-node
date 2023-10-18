@@ -8,11 +8,88 @@
     flake-utils.lib.eachDefaultSystem (system:
       with nixpkgs.legacyPackages.${system}; {
         packages = let
+          buildNodejs20 =
+            callPackage "${nixpkgs}/pkgs/development/web/nodejs/nodejs.nix" {
+              icu = icu72;
+              python = python3;
+            };
           buildNodejs =
             callPackage "${nixpkgs}/pkgs/development/web/nodejs/nodejs.nix" {
               icu = icu68;
               python = python3;
             };
+          v20_8_0 = (buildNodejs20 {
+            enableNpm = true;
+            version = "20.8.0";
+            sha256 = "0k3hf41kdj4yylcyjm730ah7mdp5dczcr8wxp8811xkdmr3yhas1";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v20_7_0 = (buildNodejs20 {
+            enableNpm = true;
+            version = "20.7.0";
+            sha256 = "1siby56zq5jl7zihmpcpwpy5rcw5vxs6cncn0m41f5a6bk8drkrz";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v20_6_1 = (buildNodejs20 {
+            enableNpm = true;
+            version = "20.6.1";
+            sha256 = "0avadhibwmdwcxabnfcsaai69028schr44iv6h680f5aimr5xv1s";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v20_6_0 = (buildNodejs20 {
+            enableNpm = true;
+            version = "20.6.0";
+            sha256 = "1ynnlwq9v6p89p7q1qw41hwp7v8dnflkfz8dig9ihjwggax5rywy";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v20_5_1 = (buildNodejs20 {
+            enableNpm = true;
+            version = "20.5.1";
+            sha256 = "14212g44jq2q912zvjv6h0jp39cij7lki9dzawb8dhiq5ym73723";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v20_5_0 = (buildNodejs20 {
+            enableNpm = true;
+            version = "20.5.0";
+            sha256 = "0n70f8gn9bz33vx2qzy1j0aysqfaa8dvfycs0r7c1wfyb1lpacnb";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v20_4_0 = (buildNodejs20 {
+            enableNpm = true;
+            version = "20.4.0";
+            sha256 = "0j2kxs8cxy61hd2vjxf9hynyfqh9s62xipsxkl13rdi6qmrhpg89";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v20_3_1 = (buildNodejs20 {
+            enableNpm = true;
+            version = "20.3.1";
+            sha256 = "14cr7x7wzn5kw2q0369z66qqd2c4jxgildcv72s5jyb90srjva0j";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v20_3_0 = (buildNodejs20 {
+            enableNpm = true;
+            version = "20.3.0";
+            sha256 = "0dbl9x2yzjbzb54gk3jnssvrrvlkcji3xfv6j1r7afpd4fad9a0v";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v20_2_0 = (buildNodejs20 {
+            enableNpm = true;
+            version = "20.2.0";
+            sha256 = "12grrpplasg4vqbq92b0sk78dqn2afq6j7zz2jbmcdbc67r3sli2";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v20_1_0 = (buildNodejs20 {
+            enableNpm = true;
+            version = "20.1.0";
+            sha256 = "1d9njij0d4laipcywkbqfi15dbgn319src92j55q3589hq8rw3v0";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
+          v20_0_0 = (buildNodejs20 {
+            enableNpm = true;
+            version = "20.0.0";
+            sha256 = "1dawgfblpki21di5jv5359xq78id8z7cz1c1775x3xv8jmbyfl3l";
+            patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
+          });
           v16_3_0 = (buildNodejs {
             enableNpm = true;
             version = "16.3.0";
@@ -398,6 +475,22 @@
             patches = lib.optional stdenv.isDarwin "${nixpkgs}/pkgs/development/web/nodejs/./bypass-xcodebuild.diff";
           });
         in rec {
+          "20" = v20_8_0.overrideAttrs (prev: {
+            passthru = {
+              "8"."0" = v20_8_0;
+              "7"."0" = v20_7_0;
+              "6"."1" = v20_6_1;
+              "6"."0" = v20_6_0;
+              "5"."1" = v20_5_1;
+              "5"."0" = v20_5_0;
+              "4"."0" = v20_4_0;
+              "3"."1" = v20_3_1;
+              "3"."0" = v20_3_0;
+              "2"."0" = v20_2_0;
+              "1"."0" = v20_1_0;
+              "0"."0" = v20_0_0;
+            };
+          });
           "16" = v16_3_0.overrideAttrs (prev: {
             passthru = {
               "3"."0" = v16_3_0;
